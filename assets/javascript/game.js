@@ -30,9 +30,13 @@ function updateScreen() {
 
 document.onkeyup = function(event) {
     
-    var currentGuess=event.key;
-
-    console.log (currentGuess);
+    // if the key pressed is not a letter, do nothing
+    if (event.keyCode < 65 || event.keyCode > 90) {
+        return;
+    };
+ 
+    // make the keypress lowercase
+    var currentGuess = event.key.toLowerCase();
 
     if (currentGuess == winLetter) {                                 // user guessed correctly
         intWins = intWins + 1;
