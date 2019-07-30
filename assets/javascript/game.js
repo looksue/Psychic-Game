@@ -6,16 +6,11 @@ var lettersPicked = "";
 var currentGuess = "";
 var winLetter = "";
 var alphArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var divWins = document.getElementById("divWins");
-var divLosses = document.getElementById("divLosses");
-var divGuessesLeft = document.getElementById("divGuessesLeft");
-var divGuessesSoFar = document.getElementById("divGuessesSoFar");
 
 // pick a letter and set guesses
 winLetter = alphArray[Math.floor(Math.random() * 26)];
 intGuessesLeft = 9;
 
-console.log("Guess what letter I'm thinking of: _");
 console.log("Wins: " + intWins);
 console.log("Losses: " + intLosses);
 console.log("Guesses Left: " + intGuessesLeft);
@@ -26,6 +21,7 @@ function updateScreen() {
     var divLosses = document.getElementById("divLosses");
     var divGuessesLeft = document.getElementById("divGuessesLeft");
     var divGuessesSoFar = document.getElementById("divGuessesSoFar");
+    
     divWins.textContent = "Wins: " + intWins;
     divLosses.textContent = "Losses: " + intLosses;
     divGuessesLeft.textContent = "Guesses Left: " + intGuessesLeft;
@@ -38,31 +34,26 @@ document.onkeyup = function(event) {
 
     console.log (currentGuess);
 
-    if (currentGuess == winLetter) {                                // user guessed correctly
+    if (currentGuess == winLetter) {                                 // user guessed correctly
         intWins = intWins + 1;
         winLetter = alphArray[Math.floor(Math.random() * 26)];
         intGuessesLeft = 9;
         lettersPicked = "";
-    }
-    if (currentGuess != winLetter && intGuessesLeft > 1) {           // user guessed incorrectly ...
+    } else if (currentGuess != winLetter && intGuessesLeft > 1) {    // user guessed incorrectly ...
         intGuessesLeft = intGuessesLeft - 1;
         lettersPicked = lettersPicked + currentGuess + ", ";
-    }
-    if (currentGuess != winLetter && intGuessesLeft == 1) {       // ... and has no guesses left
+    } else if (currentGuess != winLetter && intGuessesLeft == 1) {   // ... and has no guesses left
         intLosses = intLosses + 1;
         winLetter = alphArray[Math.floor(Math.random() * 26)];
         intGuessesLeft = 9;
         lettersPicked = "";
-    }
+    };
 
     updateScreen(); 
 
-    console.log("Guess what letter I'm thinking of: _");
     console.log("Wins: " + intWins);
     console.log("Losses: " + intLosses);
     console.log("Guesses Left: " + intGuessesLeft);
     console.log("Guesses so far: " + lettersPicked);
 
 };
-
-updateScreen();
