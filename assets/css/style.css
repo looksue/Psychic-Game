@@ -6,6 +6,17 @@ h1 {
 }
 
 .divWins {
-        color: purple;
+    color: purple;
 }
     
+.divLosses {
+    color: darkblue;
+}
+
+.divGuessesLeft {
+    color: rgb(4, 87, 87);
+}
+
+.divGuessesSoFar {
+    color: rgb(141, 92, 0);
+}
