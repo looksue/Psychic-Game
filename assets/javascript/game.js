@@ -43,14 +43,17 @@ document.onkeyup = function(event) {
         winLetter = alphArray[Math.floor(Math.random() * 26)];
         intGuessesLeft = 9;
         lettersPicked = "";
+        alert ("You won!")
     } else if (currentGuess != winLetter && intGuessesLeft > 1) {    // user guessed incorrectly ...
         intGuessesLeft = intGuessesLeft - 1;
         lettersPicked = lettersPicked + currentGuess + ", ";
     } else if (currentGuess != winLetter && intGuessesLeft == 1) {   // ... and has no guesses left
         intLosses = intLosses + 1;
         winLetter = alphArray[Math.floor(Math.random() * 26)];
+
         intGuessesLeft = 9;
         lettersPicked = "";
+        alert ("You lost!")
     };
 
     updateScreen(); 
