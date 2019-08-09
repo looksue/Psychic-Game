@@ -43,7 +43,7 @@ document.onkeyup = function(event) {
         winLetter = alphArray[Math.floor(Math.random() * 26)];
         intGuessesLeft = 9;
         lettersPicked = "";
-        alert ("You won!")
+        alert ("You won by pressing the mystery letter!")
     } else if (currentGuess != winLetter && intGuessesLeft > 1) {    // user guessed incorrectly ...
         intGuessesLeft = intGuessesLeft - 1;
         lettersPicked = lettersPicked + currentGuess + ", ";
@@ -53,7 +53,7 @@ document.onkeyup = function(event) {
 
         intGuessesLeft = 9;
         lettersPicked = "";
-        alert ("You lost!")
+        alert ("You lost by pressing nine wrong letters! Try again!")
     };
 
     updateScreen(); 
