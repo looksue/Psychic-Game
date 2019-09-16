@@ -1,16 +1,32 @@
 body {
     padding: 10px;
+    background-image: url("../images/background.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    text-align: center;
+}
+
+.container {
+    padding: 10px;
+    width: 40%;
+    height: auto;
+    border: solid white;
+    background-color: rgb(255, 255, 255, 0.55);
+    position: relative;
+    display: inline-block;
+    text-align: left;
 }
 
 h1 {
-    color: #ff0000;
+    color: darkblue;
     padding: 0px 0px 16px 0px;
     font-size: 25px;
     font-weight: bold;
 }
 
 .divWins {
-    color: purple;
+    color: darkblue;
 }
     
 .divLosses {
@@ -18,9 +34,13 @@ h1 {
 }
 
 .divGuessesLeft {
-    color: rgb(4, 87, 87);
+    color: darkblue;
 }
 
 .divGuessesSoFar {
-    color: rgb(141, 92, 0);
+    color: darkblue;
+}
+
+.txtLabel {
+    color: darkblue; 
 }
